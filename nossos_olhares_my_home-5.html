@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOSSOS OLHARES 🌙</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(145deg, #090b18, #17132b, #0b1020);
+    color: #f7f1ff;
+    font-family: Georgia, "Times New Roman", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+  }
+  .card {
+    width: min(680px, 100%);
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    backdrop-filter: blur(10px);
+  }
+  .moon { text-align:center; font-size: 42px; margin-bottom: 6px; }
+  h1 { text-align:center; font-weight: normal; letter-spacing: 2px; margin: 0 0 8px; }
+  .sub { text-align:center; opacity:.75; margin-bottom:26px; }
+  input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(0,0,0,.2);
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  button {
+    width:100%;
+    margin-top:12px;
+    padding:14px;
+    border:0;
+    border-radius:12px;
+    background:#f1e8ff;
+    color:#17132b;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+  }
+  #erro { min-height: 22px; text-align:center; color:#ffb9c5; margin-top:12px; }
+  #poema { display:none; margin-top:25px; line-height:1.8; white-space:pre-line; font-size:17px; }
+  .assinatura { text-align:right; margin-top:28px; opacity:.8; font-style:italic; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="moon">🌙</div>
+  <h1>NOSSOS OLHARES</h1>
+  <div class="sub">Uma coisa que não coube na carta...</div>
+
+  <div id="entrada">
+    <input id="senha" type="password" placeholder="Digite a senha..." autocomplete="off">
+    <button onclick="abrir()">Abrir</button>
+    <div id="erro"></div>
+  </div>
+
+  <div id="poema">
+NOSSOS OLHARES...
+
+Talvez eu não saiba me expressar,
+Talvez não consiga te chamar,
+Nem desabafar,
+E nem as coisas te falar.
+Mas eu tento o máximo
+Te contar sem chorar
+Tudo que você falou,
+Tudo que eu contei,
+Tudo que você me ajudou,
+E tudo que eu desabafei.
+
+Sei que não foi à toa,
+Pois no meu coração ecoa
+Seu nome sem parar.
+E o volume eu tento aumentar,
+Só pra você escutar.
+
+E quando falo isso, não tento esconder,
+Nem mesmo de você correr,
+Pois sei que algo vai ocorrer
+E tudo vai estremecer
+Quando eu resolver te assumir,
+Sem pensar em sumir,
+Porque isso eu te prometi.
+
+Renan, por você eu giro o mundo milhares de vezes,
+Sem pensar nos meses
+Que eu vou ficar sem dormir.
+Toda noite fecho os olhos,
+A fim de imaginar você,
+Mas não consigo esquecer
+O olhar que te forma
+Quando eu passo em frente toda hora,
+E você me olha por merecer:
+
+O seu olhar de fome absoluta.
+E meu corpo luta,
+Enquanto minha alma escuta
+Tudo que seus olhos querem dizer,
+Sem que ninguém precise perceber.
+
+Seu olhar me toca,
+Mesmo quando a distância nos sufoca,
+E, em silêncio, meu coração invoca
+Um sentimento que nunca se desloca.
+Porque, se não posso te tocar,
+Se não posso te abraçar,
+Sequer te revelar,
+Ainda de longe, posso te admirar.
+
+<div class="assinatura">— de alguém que preferiu deixar os olhos falarem. 🌙</div>
+  </div>
+</div>
+
+<script>
+const SENHA = "MY HOME";
+
+function abrir() {
+  const valor = document.getElementById("senha").value.trim().toUpperCase();
+  const erro = document.getElementById("erro");
+
+  if (valor === SENHA) {
+    document.getElementById("entrada").style.display = "none";
+    document.getElementById("poema").style.display = "block";
+  } else {
+    erro.textContent = "Senha incorreta... tente novamente 🌙";
+  }
+}
+document.getElementById("senha").addEventListener("keydown", e => {
+  if (e.key === "Enter") abrir();
+});
+</script>
+</body>
+</html>
